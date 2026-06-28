@@ -1,3 +1,18 @@
+# Synthetic Futures vs ETF Arbitrage Strategy
+
+## Overview
+
+This strategy exploits pricing inefficiencies between ETFs and their corresponding options markets by constructing **synthetic futures** positions. When the synthetic futures price deviates significantly from the underlying ETF price, the strategy executes arbitrage trades to capture the mispricing.
+
+The backtest is conducted using the **`PortfolioStrategy`** module of **vn.py**.
+
+---
+
+## Strategy Logic
+
+### 1. Core Concept
+
+A **synthetic futures** position is constructed using put-call parity:
 
 - When **Basis > Upper Threshold**, the synthetic futures is **overpriced** (significant premium)
 - The strategy shorts the synthetic futures and goes long the underlying ETF
